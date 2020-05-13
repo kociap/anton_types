@@ -42,4 +42,20 @@ namespace anton {
     static_assert(sizeof(u64) == 8, "u64 is not 64 bits wide.");
     static_assert(sizeof(f32) == 4, "f32 is not 32 bits wide.");
     static_assert(sizeof(f64) == 8, "f64 is not 64 bits wide.");
+
+    class Rect_i32 {
+    public:
+        i32 left;
+        i32 top;
+        i32 right;
+        i32 bottom;
+    };
+
+    class Rect_f32 {
+    public:
+        f32 left;
+        f32 top;
+        f32 right;
+        f32 bottom;
+    };
 } // namespace anton
