@@ -36,6 +36,8 @@ namespace anton {
     using char16 = char16_t;
     using char32 = char32_t;
 
+    using nullptr_t = decltype(nullptr);
+
     static_assert(sizeof(u8) == 1, "u8 is not 8 bits wide.");
     static_assert(sizeof(u16) == 2, "u16 is not 16 bits wide.");
     static_assert(sizeof(u32) == 4, "u32 is not 32 bits wide.");
