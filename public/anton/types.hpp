@@ -17,10 +17,10 @@ namespace anton {
 
     #if defined(_WIN64)
       using isize = i64;
-      using usize = i64;
+      using usize = u64;
     #else
       using isize = i32;
-      using usize = i32;
+      using usize = u32;
     #endif
 #else
     using i8 = signed char;
