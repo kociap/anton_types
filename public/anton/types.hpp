@@ -14,6 +14,14 @@ namespace anton {
 
     using f32 = float;
     using f64 = double;
+
+    #if   defined(_WIN32)
+        using isize = i32;
+        using usize = i32;
+    #elif defined(_WIN64)
+        using isize = i64;
+        using usize = i64;
+    #endif
 #else
     using i8 = signed char;
     using i16 = signed short;
@@ -23,15 +31,19 @@ namespace anton {
     using u8 = unsigned char;
     using u16 = unsigned short;
     using u32 = unsigned int;
-    using u64 = unsigned long;
+    using u64 = unsigned long long;
 
     using f32 = float;
     using f64 = double;
+
+    #if defined(__x86_64__) || defined(__aarch64__)
+        using isize = i64;
+	    using usize = u64;
+    #else
+        using isize = i32;
+        using usize = u32;
+    #endif
 #endif
-
-    using isize = i64;
-    using usize = u64;
-
     using char8 = char;
     using char16 = char16_t;
     using char32 = char32_t;
@@ -44,6 +56,8 @@ namespace anton {
     static_assert(sizeof(u64) == 8, "u64 is not 64 bits wide.");
     static_assert(sizeof(f32) == 4, "f32 is not 32 bits wide.");
     static_assert(sizeof(f64) == 8, "f64 is not 64 bits wide.");
+    static_assert(sizeof(isize) == sizeof(void*), "isize is not size of a pointer.");
+    static_assert(sizeof(usize) == sizeof(void*), "isize is not size of a pointer.");
 
     class Rect_i32 {
     public:
