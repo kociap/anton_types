@@ -15,12 +15,12 @@ namespace anton {
     using f32 = float;
     using f64 = double;
 
-    #if   defined(_WIN32)
-        using isize = i32;
-        using usize = i32;
-    #elif defined(_WIN64)
-        using isize = i64;
-        using usize = i64;
+    #if defined(_WIN64)
+      using isize = i64;
+      using usize = i64;
+    #else
+      using isize = i32;
+      using usize = i32;
     #endif
 #else
     using i8 = signed char;
