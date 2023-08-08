@@ -45,6 +45,25 @@ namespace anton {
     static_assert(sizeof(f32) == 4, "f32 is not 32 bits wide.");
     static_assert(sizeof(f64) == 8, "f64 is not 64 bits wide.");
 
+    namespace limits {
+        constexpr i8 minimum_i8 = static_cast<i8>(static_cast<i8>(1) << 7);
+        constexpr i8 maximum_i8 = ~static_cast<i8>(0) ^ minimum_i8;
+        constexpr i16 minimum_i16 = static_cast<i16>(static_cast<i16>(1) << 15);
+        constexpr i16 maximum_i16 = ~static_cast<i16>(0) ^ minimum_i16;
+        constexpr i32 minimum_i32 = static_cast<i32>(static_cast<i32>(1) << 31);
+        constexpr i32 maximum_i32 = ~static_cast<i32>(0) ^ minimum_i32;
+        constexpr i64 minimum_i64 = static_cast<i64>(static_cast<i64>(1) << 63);
+        constexpr i64 maximum_i64 = ~static_cast<i64>(0) ^ minimum_i64;
+        constexpr u8 minimum_u8 = 0;
+        constexpr u8 maximum_u8 = ~static_cast<u8>(0);
+        constexpr u16 minimum_u16 = 0;
+        constexpr u16 maximum_u16 = ~static_cast<u16>(0);
+        constexpr u32 minimum_u32 = 0;
+        constexpr u32 maximum_u32 = ~static_cast<u32>(0);
+        constexpr u64 minimum_u64 = 0;
+        constexpr u64 maximum_u64 = ~static_cast<u64>(0);
+    } // namespace limits
+
     class Rect_i32 {
     public:
         i32 left;
