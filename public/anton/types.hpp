@@ -1,42 +1,44 @@
 #pragma once
 
 namespace anton {
+    inline namespace types {
 #if defined(_WIN32) || defined(_WIN64)
-    using i8 = signed char;
-    using i16 = signed short;
-    using i32 = signed int;
-    using i64 = signed long long;
+        using i8 = signed char;
+        using i16 = signed short;
+        using i32 = signed int;
+        using i64 = signed long long;
 
-    using u8 = unsigned char;
-    using u16 = unsigned short;
-    using u32 = unsigned int;
-    using u64 = unsigned long long;
+        using u8 = unsigned char;
+        using u16 = unsigned short;
+        using u32 = unsigned int;
+        using u64 = unsigned long long;
 
-    using f32 = float;
-    using f64 = double;
+        using f32 = float;
+        using f64 = double;
 #else
-    using i8 = signed char;
-    using i16 = signed short;
-    using i32 = signed int;
-    using i64 = signed long;
+        using i8 = signed char;
+        using i16 = signed short;
+        using i32 = signed int;
+        using i64 = signed long;
 
-    using u8 = unsigned char;
-    using u16 = unsigned short;
-    using u32 = unsigned int;
-    using u64 = unsigned long;
+        using u8 = unsigned char;
+        using u16 = unsigned short;
+        using u32 = unsigned int;
+        using u64 = unsigned long;
 
-    using f32 = float;
-    using f64 = double;
+        using f32 = float;
+        using f64 = double;
 #endif
 
-    using isize = i64;
-    using usize = u64;
+        using isize = i64;
+        using usize = u64;
 
-    using char8 = char;
-    using char16 = char16_t;
-    using char32 = char32_t;
+        using char8 = char;
+        using char16 = char16_t;
+        using char32 = char32_t;
 
-    using nullptr_t = decltype(nullptr);
+        using nullptr_t = decltype(nullptr);
+    } // namespace types
 
     static_assert(sizeof(u8) == 1, "u8 is not 8 bits wide.");
     static_assert(sizeof(u16) == 2, "u16 is not 16 bits wide.");
