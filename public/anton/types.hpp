@@ -48,13 +48,13 @@ namespace anton {
     static_assert(sizeof(f64) == 8, "f64 is not 64 bits wide.");
 
     namespace limits {
-        constexpr i8 minimum_i8 = static_cast<i8>(static_cast<i8>(1) << 7);
+        constexpr i8 minimum_i8 = static_cast<i8>(static_cast<u8>(1) << 7);
         constexpr i8 maximum_i8 = ~static_cast<i8>(0) ^ minimum_i8;
-        constexpr i16 minimum_i16 = static_cast<i16>(static_cast<i16>(1) << 15);
+        constexpr i16 minimum_i16 = static_cast<i16>(static_cast<u16>(1) << 15);
         constexpr i16 maximum_i16 = ~static_cast<i16>(0) ^ minimum_i16;
-        constexpr i32 minimum_i32 = static_cast<i32>(static_cast<i32>(1) << 31);
+        constexpr i32 minimum_i32 = static_cast<i32>(static_cast<u32>(1) << 31);
         constexpr i32 maximum_i32 = ~static_cast<i32>(0) ^ minimum_i32;
-        constexpr i64 minimum_i64 = static_cast<i64>(static_cast<i64>(1) << 63);
+        constexpr i64 minimum_i64 = static_cast<i64>(static_cast<u64>(1) << 63);
         constexpr i64 maximum_i64 = ~static_cast<i64>(0) ^ minimum_i64;
         constexpr u8 minimum_u8 = 0;
         constexpr u8 maximum_u8 = ~static_cast<u8>(0);
